@@ -23,11 +23,11 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         
       - name: Container Metadata
         id: container_metadata
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         with:
           script: |
             core.setOutput('container_tag', `${context.repo.owner}/${{ matrix.os }}-actions-runner:${context.sha}`);
